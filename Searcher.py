@@ -65,14 +65,17 @@ def Merge_query(query_lst): # find intersection among query terms' postings
 def RankTop(sortPost): # print the top 5 urls
     global docid
     check = 0
+    relst = []
     while check < len(sortPost):
         if check == 5:
             break
         print(docid[sortPost[check]])
+        relst.append(docid[sortPost[check]])
         check += 1
+    return relst
 
 
-def UInterface(root): # text user interface of the search engine
+def run(root): # text user interface of the search engine
     count = 0
     while True:
         query = input("Query (ENTER Key to exit):\n")
@@ -96,9 +99,26 @@ def UInterface(root): # text user interface of the search engine
                 print(f"Top {len(resultUrl)} results (results found are less than 5):")
             RankTop(resultUrl)
             print("")
-    
+
+
+def UInterface(query):
+    start = time.process_time()
+    resultUrl = Merge_query((Query_search(query)))
+    infolst = []
+    if not resultUrl:
+        infolst.append("No result found")
+    else:
+        end = time.process_time()
+        infolst.append(f"\nSearch time: {end - start} seconds. Total {len(resultUrl)} Urls are found.")
+        if len(resultUrl) >= 5:
+            infolst.append("Top 5 results:")
+        else:
+            infolst.append(f"Top {len(resultUrl)} results (results found are less than 5):")
+        infolst.extend(RankTop(resultUrl))
+    return infolst, format(end-start,'.3f')
+
 
 if __name__ == '__main__':
     root = 'B:\CS 121\Assignment3M3\TEST'
-    UInterface(root)
+    run(root)
 
