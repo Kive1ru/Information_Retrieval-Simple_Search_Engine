@@ -3,9 +3,10 @@
 
 ### Required library:
 
-	NLTK
-	BS -- BeautifulSoup
-	Simhash
+	NLTK - pip install nltk
+	BeautifulSoup4 - pip install beautifulsoup4
+	Simhash - pip install simhash
+	Flask - pip install Flask
   
 ### How to run the code that creates the index?
 
