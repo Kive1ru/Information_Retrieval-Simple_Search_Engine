@@ -1,5 +1,5 @@
 # Information_Retrieval-Simple_Search_Engine
-UCI CS 121 Information Retrieval Project
+UCI CS 121 Information Retrieval Project(Assignment3)
 
 How to run the code that creates the index?
 	1. Open Indexer.py
