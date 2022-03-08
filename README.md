@@ -20,9 +20,13 @@
 	1. Open Searcher.py
 	2. Change the root (the address of where your index files be placed) under "if __name__ == '__main__':"
 	3. Run the program
-	4. After you start Searcher.py, each time you want to search, type in the query and hit enter
-	5. To exit the program, simply hit enter
 
+### How to perform a simple query?
+
+	1. After you start Searcher.py, each time you want to search, type in the query and hit enter
+	2. The result will display on terminal
+	3. To exit the program, simply hit enter key on keyboard
+	
 ### How to start and perform the search interface (web interface)?
 
 	1. Run command "pip install Flask"
