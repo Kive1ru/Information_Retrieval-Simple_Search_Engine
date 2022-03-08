@@ -1,11 +1,10 @@
 #15786064(Zijian Chen), 13713641(Qingshuang Su), 70518431(Lingxin Li), 90277259(Jiahao(Kylin) Guo)
-from nltk.tokenize import word_tokenize
-from nltk.stem.snowball import SnowballStemmer
-from nltk.corpus import stopwords
-from collections import defaultdict
+import os
 import json
 import time
-import os
+from collections import defaultdict
+from nltk.tokenize import word_tokenize
+from nltk.stem.snowball import SnowballStemmer
 
 
 docid = dict()
