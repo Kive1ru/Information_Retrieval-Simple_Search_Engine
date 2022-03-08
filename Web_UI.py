@@ -6,12 +6,12 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
+def search_text():
     return render_template('search_text.html')
 
 
 @app.route('/', methods=['POST'])
-def my_form_post():
+def result_url():
     text = request.form['text']
     root = 'B:\CS 121\Assignment3M3\TEST'
     processed_text = Searcher.UInterface(text,root)
