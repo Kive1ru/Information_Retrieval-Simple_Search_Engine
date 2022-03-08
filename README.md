@@ -20,9 +20,5 @@
 	1. Open Searcher.py
 	2. Change the root (the address of where your index files be placed) under "if __name__ == '__main__':"
 	3. Run the program
-
-### How to perform a simple query (text interface)?
-
-	1. After you start Searcher.py, each time you want to search, type in the query and hit enter
-	2. To exit the program, simply hit enter
-	
+	4. After you start Searcher.py, each time you want to search, type in the query and hit enter
+	5. To exit the program, simply hit enter	
