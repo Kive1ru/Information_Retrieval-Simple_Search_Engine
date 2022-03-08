@@ -1,13 +1,13 @@
 # 15786064(Zijian Chen), 13713641(Qingshuang Su), 70518431(Lingxin Li), 90277259(Jiahao(Kylin) Guo)
+import os
+import math
+import json
+from simhash import Simhash
+from bs4 import BeautifulSoup
+from collections import defaultdict
 from bs4 import BeautifulSoup
 from nltk.tokenize import word_tokenize
 from nltk.stem.snowball import SnowballStemmer
-import json
-from collections import defaultdict
-import os
-from urllib.parse import urldefrag
-import math
-from simhash import Simhash
 
 
 indexer_dict = defaultdict(dict)
