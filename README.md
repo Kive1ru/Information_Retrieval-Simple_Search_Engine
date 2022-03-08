@@ -22,7 +22,15 @@
 	3. Run the program
 	4. After you start Searcher.py, each time you want to search, type in the query and hit enter
 	5. To exit the program, simply hit enter
-	
+
+### How to start and perform the search interface (web interface)?
+
+	1. Run command "pip install Flask"
+	2. Run the script "ui.py"
+	3. On a web browser, input "http://localhost:5000/"
+	4. In the Text Input, enter a query, and click "submit"
+	5. The result is shown on the new page. 
+
 ### 20 Test Queries:
 	1. cristina lopes
 	2. machine learning
