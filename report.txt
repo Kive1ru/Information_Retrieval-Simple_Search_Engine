@@ -1,0 +1,3 @@
+The number of pages in the dataset: 55393
+The number of indexed documents: 40009
+unique words: 240871
