@@ -11,7 +11,7 @@
 ### How to run the code that creates the index?
 
 	1. Open Indexer.py
-	2. Change the root(the address of the DEV folder) and storeRoot(the address of where you want your index files be placed)  under "if __name__ == '__main__':"
+	2. Change the root(the address of the DEV folder) and storeRoot(the address of where you want your index files be placed) under "if __name__ == '__main__':"
 	3. Run the program
 	4. Wait until the program ends to see the index files (a folder named "TEST" containing all the indexes classified according to their first initial character)
 
@@ -30,10 +30,11 @@
 ### How to start and perform the search interface (web interface)?
 
 	1. Run command "pip install Flask"
-	2. Run the script "ui.py"
-	3. On a web browser, input "http://localhost:5000/"
-	4. In the Text Input, enter a query, and click "submit"
-	5. The result is shown on the new page. 
+	2. Run the script "Web_UI.py"
+	3. Change the line 16 root to the index files location(TEST folder)
+	4. On a web browser, input "http://127.0.0.1:5000/"(this information is showing in terminal)
+	5. In the Text Input, enter query, and click "submit"
+	6. The result is shown on the new page. 
 
 ### 20 Test Queries:
 	1. cristina lopes
