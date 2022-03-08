@@ -17,8 +17,7 @@ def read_docID(root):  # load the docID dict
         docid = json.load(d)
 
 
-def Load_json(query_token):  # get the dict item of sepecific token term
-    global root
+def Load_json(query_token, root):  # get the dict item of sepecific token term
     if query_token == "aux":
         dir_file = os.path.join(root, query_token[0])
         json_file = os.path.join(dir_file, query_token + '_.json')
@@ -38,11 +37,11 @@ def tokenize(content): # tokenize query
     return [stemmer.stem(word) for word in word_tokenize(content) if word.isalnum()]
 
 
-def Query_search(query):  # get a list of query terms associated with their postings
+def Query_search(query, root):  # get a list of query terms associated with their postings
     relst = []
     query_lst = tokenize(query)
     for qtoken in query_lst:
-        query_dic = Load_json(qtoken)
+        query_dic = Load_json(qtoken, root)
         relst.append(query_dic)
     relst = sorted(relst, key = lambda x: len(x))
     return relst
@@ -86,7 +85,7 @@ def run(root): # text user interface of the search engine
         if count == 0:
             read_docID(root)
             count += 1
-        resultUrl = Merge_query((Query_search(query)))
+        resultUrl = Merge_query(Query_search(query,root))
         end = time.process_time()
         if not resultUrl:
             print("")
@@ -101,9 +100,10 @@ def run(root): # text user interface of the search engine
             print("")
 
 
-def UInterface(query):
+def UInterface(query,root):
     start = time.process_time()
-    resultUrl = Merge_query((Query_search(query)))
+    read_docID(root)
+    resultUrl = Merge_query(Query_search(query,root))
     infolst = []
     if not resultUrl:
         infolst.append("No result found")
@@ -115,7 +115,7 @@ def UInterface(query):
         else:
             infolst.append(f"Top {len(resultUrl)} results (results found are less than 5):")
         infolst.extend(RankTop(resultUrl))
-    return infolst, format(end-start,'.3f')
+    return infolst
 
 
 if __name__ == '__main__':
